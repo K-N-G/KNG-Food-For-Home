@@ -17,8 +17,7 @@ export default class DailyFood extends React.Component {
                         <div>
                         <h2>{this.props.name}</h2>
                         <div>Съдържание {this.props.content}</div>
-                        <div>Грамаж: {this.props.weight}гр.</div>
-                        <div>Цена: {this.props.price}лв.</div>
+                        <div>Грамаж: {this.props.weight}гр. Цена: {this.props.price}лв.</div>
                         </div>
                     ): null}
                 </div>

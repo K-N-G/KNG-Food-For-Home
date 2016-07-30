@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1469298915773,
+        "name": "Мусака",
+        "content": "neshto",
+        "price": 12.5,
+        "isCooked": false,
+        "weight": 300
+    },
+    {
+        "id": 1469299490602,
+        "name": "Пиле с ориз",
+        "content": "neshto",
+        "price": 3.2,
+        "isCooked": false,
+        "weight": 300
+    },
+    {
+        "id": 1469299620363,
+        "name": "Крем карамел",
+        "content": "neshto",
+        "price": 2.4,
+        "isCooked": true,
+        "weight": 100
+    },
+    {
+        "id": 1469350607747,
+        "name": "Пилешка супа",
+        "content": "neshto",
+        "price": 1.9,
+        "isCooked": true,
+        "weight": 350
+    },
+    {
+        "id": 1469350744112,
+        "name": "Картофи на фурна",
+        "content": "neshto",
+        "price": 2.8,
+        "isCooked": false,
+        "weight": 300
+    },
+    {
+        "id": 1469886799272,
+        "name": "Сандвич",
+        "content": "Шунка и кашкавал",
+        "price": 2.6,
+        "isCooked": false,
+        "weight": 150
+    },
+    {
+        "id": 1469887350809,
+        "name": "Зеле с месо",
+        "content": "зеле и месо",
+        "price": 3,
+        "isCooked": true,
+        "weight": 300
+    }
+]

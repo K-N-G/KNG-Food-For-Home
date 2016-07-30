@@ -8,13 +8,17 @@ const Navigation = (props) => {
         <div>
             <h1>Food for home</h1>
             <ul role="nav">
-                <li><Link to="/mastermenu" activeStyle={{ color: 'red' }} >Master menu</Link></li>
-                <li><Link to="/dailymenu" activeStyle={{ color: 'red' }} >Daily menu</Link></li>
+                <li><Link to="/mastermenu" activeStyle={{ color: 'grey' }} >Master menu</Link></li>
+                <li><Link to="/dailymenu" activeStyle={{ color: 'grey' }} >Daily menu</Link></li>
+                <li><Link to="/mastermenu/add" activeStyle={{ color: 'grey' }} >Add food</Link></li>
             </ul>
             {props.children}
         </div>
     )
 };
+
+
+
 
 Navigation.propTypes = {
     children: React.PropTypes.node

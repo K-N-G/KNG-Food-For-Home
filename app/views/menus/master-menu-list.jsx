@@ -20,13 +20,13 @@ const MasterMenuList = (props) =>{
                         price={food.price}
                         isCooked={food.isCooked}
                         weight={food.weight}
-                        commentId={food.id} 
+                        foodId={food.id} 
                         key={food.id}>
                     </MasterFood>
                 );
             });
         return (
-            <div className="commentList">
+            <div className="food-list">
                 {foods}
             </div>
         );
@@ -36,7 +36,7 @@ const MasterMenuList = (props) =>{
 MasterMenuList.propTypes = {
     data: React.PropTypes.arrayOf(
         React.PropTypes.shape({
-            id: React.PropTypes.number.isRequired,
+            id: React.PropTypes.number,
             name: React.PropTypes.string,
             content: React.PropTypes.string,
             price: React.PropTypes.number,

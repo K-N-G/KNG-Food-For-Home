@@ -3,9 +3,16 @@
 import React  from 'react';
 
 
-export default class MasterFood extends React.Component {
-    constructor(props) {
-        super(props);
+class MasterFood extends React.Component {
+    constructor(props, context) {
+        super(props, context);
+        this.handleEditFood = this.handleEditFood.bind(this);
+    }
+
+    handleEditFood(){
+        console.log(this.props);
+        let path = '/mastermenu/edit/' + this.props.foodId;
+        this.context.router.push(path);
     }
 
     render() {
@@ -15,8 +22,8 @@ export default class MasterFood extends React.Component {
             <div className="food">
                 <h2>{this.props.name}</h2>
                 <div>Съдържание {this.props.content}</div>
-                <div>Грамаж: {this.props.weight}гр.</div>
-                <div>Цена: {this.props.price}лв.</div>
+                <div>Грамаж: {this.props.weight}гр. Цена: {this.props.price}лв.</div>
+                <button className="food-button" type="button" onClick={this.handleEditFood}>Редактирай</button>
             </div>
         );
 
@@ -24,10 +31,16 @@ export default class MasterFood extends React.Component {
 }
 
 MasterFood.propTypes = {
-    id: React.PropTypes.number,
+    foodId: React.PropTypes.number,
     name: React.PropTypes.string,
     content: React.PropTypes.string,
     price: React.PropTypes.number,
     isCooked: React.PropTypes.bool,
     weight: React.PropTypes.number
 };
+
+MasterFood.contextTypes = {
+    router:React.PropTypes.object
+};
+
+export default MasterFood;

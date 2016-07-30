@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1469798927639,
+    "username": "BigBoss",
+    "password": "123456",
+    "confirmPassword": "123456",,
+    "isChef":true,
+    "isAdmin": true
+  },
+  {
+    "id": 1469798927639,
+    "username": "MasterChef",
+    "password": "123456",
+    "confirmPassword": "123456",,
+    "isChef":true,
+    "isAdmin": false
+  },
+  {
+    "id": 1469798927639,
+    "username": "MnooGladen",
+    "password": "123456",
+    "confirmPassword": "123456",,
+    "isChef":false,
+    "isAdmin": false
+  }
+]

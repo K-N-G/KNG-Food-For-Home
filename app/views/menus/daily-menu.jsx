@@ -2,9 +2,9 @@
 
 import React from 'react';
 import $ from 'jquery';
-import MasterMenuList from './master-menu-list';
+import DailyMenuList from './daily-menu-list';
 
-class MasterMenu extends React.Component {
+class DailyMenu extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = { data: [] };
@@ -24,21 +24,25 @@ class MasterMenu extends React.Component {
         });
     }
 
+    componentDidMount() {
+        this.getFoods();
+    }
+
     render() {
         return(
-            <MasterMenuList data={this.state.data} myTitle='Comment: '/>
-            
+            <DailyMenuList data={this.state.data} myTitle='Comment: '/>
+
         );
     }
 }
 
-MasterMenu.propTypes = {
+DailyMenu.propTypes = {
     route: React.PropTypes.object,
     params: React.PropTypes.object
 };
 
-MasterMenu.contextTypes = {
+DailyMenu.contextTypes = {
     router: React.PropTypes.object
 };
 
-export default MasterMenu;
+export default DailyMenu;

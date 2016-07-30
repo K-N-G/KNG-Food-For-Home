@@ -2,7 +2,7 @@
   {
   "id": 1,
   "name": "Мусака",
-  "content": "",
+  "content": "neshto",
   "price": 12.50,
   "isCooked": false,
   "weight": 300
@@ -10,7 +10,7 @@
   {
   "id": 2,
   "name": "Пиле с ориз",
-  "content": "",
+  "content": "neshto",
   "price": 3.20,
   "isCooked": false,
   "weight": 300
@@ -18,23 +18,23 @@
   {
   "id": 3,
   "name": "Крем карамел",
-  "content": "",
+  "content": "neshto",
   "price": 2.40,
-  "isCooked": false,
+  "isCooked": true,
   "weight": 100
   },
   {
   "id": 4,
   "name": "Пилешка супа",
-  "content": "",
+  "content": "neshto",
   "price": 1.90,
-  "isCooked": false,
+  "isCooked": true,
   "weight": 350
   },
   {
   "id": 5,
   "name": "Картофи на фурна",
-  "content": "",
+  "content": "neshto",
   "price": 2.80,
   "isCooked": false,
   "weight": 300

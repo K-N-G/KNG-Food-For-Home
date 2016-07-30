@@ -42,10 +42,17 @@ class RegisterUser extends React.Component {
             url: this.props.route.url,
             dataType: 'json',
             data: user
-        }).done((userId) => {
-            let path = '/users/' + userId;
-            this.context.router.push(path);
-            //console.log(path);
+        }).done((user) => {
+            let registered = {
+                username: user.username,
+                password: user.password
+            };
+
+            this.context.authService.loginUser(registered).then(() => {
+                let path = '/users/show';
+                this.context.router.push(path);
+            })
+
         }).fail((xhr, status, err) => {
             console.error(this.props.route.url, status, err.toString());
         });
@@ -53,20 +60,20 @@ class RegisterUser extends React.Component {
 
     render() {
         return(
-            <div className="jumbotron container col-xs-12 col-md-6 col-lg-4 col-md-offset-4">
-                <div className="form-group">
+            <div className="food-form">
+                <div className="food-form-element">
                     <label htmlFor="username">Потребителско име</label>
-                    <input type="text" className="form-control" id="username" onChange={this.handleUsername} />
+                    <input type="text" className="food-input" id="username" onChange={this.handleUsername} />
                 </div>
-                <div className="form-group">
+                <div className="food-form-element">
                     <label htmlFor="password">Парола</label>
-                    <input type="password" className="form-control" id="password" onChange={this.handlePassword} />
+                    <input type="password" className="food-input" id="password" onChange={this.handlePassword} />
                 </div>
-                <div className="form-group">
+                <div className="food-form-element">
                     <label htmlFor="password-confirm">Потвърди паролата</label>
-                    <input type="password" className="form-control" id="password-confirm" onChange={this.handlePasswordConfirm} />
+                    <input type="password" className="food-input" id="password-confirm" onChange={this.handlePasswordConfirm} />
                 </div>
-                <button className="btn btn-primary" onClick={this.registerUser}>Регистрирай се</button>
+                <button className="food-button" onClick={this.registerUser}>Регистрирай се</button>
             </div>
         )
     }
@@ -77,7 +84,8 @@ RegisterUser.propTypes = {
 };
 
 RegisterUser.contextTypes = {
-    router: React.PropTypes.object
+    router: React.PropTypes.object,
+    authService: React.PropTypes.object
 };
 
 export default RegisterUser;

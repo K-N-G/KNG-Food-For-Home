@@ -79,7 +79,7 @@ server.route([
     },
     {
         method: 'PUT',
-        path: '/api/masretmenu',
+        path: '/api/mastermenu',
         handler: function(request, reply) {
             fs.readFile(DATA_FOOD, function(err, data) {
                 if(err) {
@@ -87,7 +87,15 @@ server.route([
                 }
 
                 let foods = JSON.parse(data);
-                let editFood = request.payload;
+                let editFood = {
+                    id: request.payload.id,
+                    name: request.payload.name,
+                    content: request.payload.content,
+                    price: parseFloat(request.payload.price),
+                    isCooked: false,
+                    weight: parseFloat(request.payload.weight)
+                };
+                                
                 editFood.id = parseInt(editFood.id);
 
                 foods = foods.filter((food) => {
@@ -143,26 +151,21 @@ server.route([
                 }
 
                 let foods = JSON.parse(data);
-                let deleteFood;
-                foods = foods.filter((food,index) => {
-                   if(food.id === parseInt(request.params.id)){
-                       deleteFood = food;
-                       return false;
-                   } else{
-                       return true;
-                   }
+
+                let deleteFood = parseInt(request.payload.id);
+
+                foods = foods.filter((food) => {
+                    return food.id !== deleteFood;
                 });
-                if(!deleteFood){
-                    reply(Boom.notFound('Food does not exist'));
-                }else{
-                    fs.writeFile(DATA_FOOD,JSON.stringify(foods,null,4),function (err) {
-                        if(err){
-                            throw err;
-                        }
-                        reply(foods);
-                    }); 
-                }
-            });
+
+
+                fs.writeFile(DATA_FOOD, JSON.stringify(foods, null, 4), function(err) {
+                    if(err) {
+                        throw err;
+                    }
+                    reply(deleteFood);
+                })
+            })
         }
     },
     {
@@ -179,15 +182,17 @@ server.route([
                     id: Date.now(),
                     username: request.payload.username,
                     password: request.payload.password,
-                    confirmPassword: request.payload.confirmPassword
+                    confirmPassword: request.payload.confirmPassword,
+                    isChef: false,
+                    isAdmin: false
                 };
                 users.push(newUser);
 
-                fs.writeFile(USERS_FILE, JSON.stringify(users, null, 4), function(err) {
+                fs.writeFile(DATA_USER, JSON.stringify(users, null, 4), function(err) {
                     if(err) {
                         throw err;
                     }
-                    reply(newUser.id);
+                    reply(newUser);
                 })
             })
         }
@@ -207,8 +212,6 @@ server.route([
                 users.forEach((user) => {
                     if(currentUser.username === user.username && currentUser.password === user.password) {
                         reply(user);
-                    }else {
-                        reply(Boom.notFound('No such user!'));
                     }
                 })
             })

@@ -46,11 +46,11 @@ class EditFood extends React.Component {
 
     editFood() {
         let editFood = {
-
+            id:this.props.params.foodId,
             name: this.state.name.trim(),
             content: this.state.content.trim(),
-            price: parseFloat(this.state.price.trim()),
-            weight: parseFloat(this.state.weight.trim())
+            price: parseFloat(this.state.price),
+            weight: parseFloat(this.state.weight)
         };
 
         $.ajax({
@@ -59,10 +59,14 @@ class EditFood extends React.Component {
             dataType: 'json',
             data: editFood
         }).done(() => {
+
             this.context.router.push('/mastermenu');
         }).fail((xhr, status, err) => {
             console.error(this.props.route.url, status, err.toString());
         });
+    }
+    componentDidMount() {
+        this.getFood(this.props.params.foodId);
     }
 
     render() {
@@ -82,16 +86,17 @@ class EditFood extends React.Component {
                 </div>
                 <div className="food-form-element">
                     <label htmlFor="weight">Тегло</label>
-                    <input type="text" className="food-input" id="weight" value={this.state.value} onChange={this.handleFoodWeight} />
+                    <input type="text" className="food-input" id="weight" value={this.state.weight} onChange={this.handleFoodWeight} />
                 </div>
-                <button className="btn btn-primary" onClick={this.editFood}>Редактирай</button>
+                <button className="food-button" onClick={this.editFood}>Редактирай</button>
             </div>
         )
     }
 }
 
 EditFood.propTypes = {
-    route: React.PropTypes.object
+    route: React.PropTypes.object,
+    params: React.PropTypes.object
 };
 
 EditFood.contextTypes = {

@@ -7,14 +7,17 @@ class MasterFood extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.handleEditFood = this.handleEditFood.bind(this);
+        this.handleDeleteFood = this.handleDeleteFood.bind(this);
     }
 
     handleEditFood(){
-        console.log(this.props);
         let path = '/mastermenu/edit/' + this.props.foodId;
         this.context.router.push(path);
     }
-
+    handleDeleteFood() {
+        let path = '/mastermenu/delete/' + this.props.foodId;
+        this.context.router.push(path);
+    }
     render() {
 
         return (
@@ -24,6 +27,7 @@ class MasterFood extends React.Component {
                 <div>Съдържание {this.props.content}</div>
                 <div>Грамаж: {this.props.weight}гр. Цена: {this.props.price}лв.</div>
                 <button className="food-button" type="button" onClick={this.handleEditFood}>Редактирай</button>
+                <button className="food-button" type="button" onClick={this.handleDeleteFood}>Изтрий</button>
             </div>
         );
 

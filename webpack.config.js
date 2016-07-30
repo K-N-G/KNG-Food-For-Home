@@ -1,22 +1,28 @@
 module.exports = {
-    entry: "./app.js",
+    entry: "./app/app.js",
     output: {
         filename: 'bundle.js'
     },
     module:{
-        preLoader:[
+        preLoaders: [
             {
-                test:/\.js$/,
-                exclude: /node-module/,
+                test: /\.js$/,
+                exclude: /node_modules/,
                 loader: 'jshint-loader'
+            },
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loader: 'eslint-loader'
             }
         ],
-        loader:[
+        loaders: [
             {
-                test: /\.es6$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {
+                    cacheDirectory: true,
                     presets: ['react', 'es2015']
                 }
             }

@@ -1,0 +1,42 @@
+[
+  {
+  "id": 1,
+  "name": "Мусака",
+  "content": "",
+  "price": 12.50,
+  "isCooked": false,
+  "weight": 300
+  },
+  {
+  "id": 2,
+  "name": "Пиле с ориз",
+  "content": "",
+  "price": 3.20,
+  "isCooked": false,
+  "weight": 300
+  },
+  {
+  "id": 3,
+  "name": "Крем карамел",
+  "content": "",
+  "price": 2.40,
+  "isCooked": false,
+  "weight": 100
+  },
+  {
+  "id": 4,
+  "name": "Пилешка супа",
+  "content": "",
+  "price": 1.90,
+  "isCooked": false,
+  "weight": 350
+  },
+  {
+  "id": 5,
+  "name": "Картофи на фурна",
+  "content": "",
+  "price": 2.80,
+  "isCooked": false,
+  "weight": 300
+  }
+]

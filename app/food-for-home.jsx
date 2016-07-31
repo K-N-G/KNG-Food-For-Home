@@ -17,7 +17,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
         <Route path="/" component={MainView}>
             <Route path="/mastermenu" url="/api/mastermenu" component={MasterMenu} />
-            <Route path="/dailymenu" url="/api/mastermenu" component={DailyMenu} />
+            <Route path="/dailymenu" url="/api/dailymenu" component={DailyMenu} />
             <Route path="/mastermenu/add" url="/api/mastermenu" component={AddFood} />
             <Route path="/mastermenu/edit(/:foodId)" url="/api/mastermenu" component={EditFood} />
             <Route path="/mastermenu/delete(/:foodId)" url="/api/mastermenu" component={DeleteFood} />

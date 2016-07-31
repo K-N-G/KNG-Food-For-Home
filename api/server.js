@@ -58,6 +58,25 @@ server.route([
     },
     {
         method: 'GET',
+        path: '/api/dailymenu',
+        handler: function(request, reply) {
+            fs.readFile(DATA_FOOD, function(err, data) {
+                if(err) {
+                    throw err;
+                }
+                
+                let foods = JSON.parse(data);
+                foods = foods.filter((food) => {
+                    return food.isCooked === true;
+                });
+
+                reply(foods);
+                
+            })
+        }
+    },
+    {
+        method: 'GET',
         path: '/api/mastermenu/{id}',
         handler: function(request, reply) {
             fs.readFile(DATA_FOOD, function(err, data) {

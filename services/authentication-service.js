@@ -1,4 +1,3 @@
-'use strict';
 
 import $ from 'jquery';
 
@@ -18,9 +17,9 @@ class AuthenticationService {
                 dataType: 'json',
                 data: user
             }).then((loggedUser) => {
-                console.log(loggedUser);
                 userData.isAdmin = loggedUser.isAdmin;
                 userData.id = loggedUser.id;
+                userData.isChef = loggedUser.isChef;
                 sessionStorage.currentUser = JSON.stringify(userData);
             })
         );
@@ -44,6 +43,11 @@ class AuthenticationService {
     isAdmin() {
         let currentUser = this.getUser();
         return currentUser !== undefined && currentUser.isAdmin;
+    }
+    
+    isChef() {
+        let currentUser = this.getUser();
+        return currentUser !== undefined && currentUser.isChef;
     }
 }
 

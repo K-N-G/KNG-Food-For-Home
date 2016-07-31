@@ -73,7 +73,7 @@ class EditFood extends React.Component {
         return(
             <div className="food-form">
                 <div className="food-form-element">
-                    <label htmlFor="name">Наименование</label>
+                    <label htmlFor="name">Ястие</label>
                     <input type="text" className="food-input" id="name" value={this.state.name} onChange={this.handleFoodName} />
                 </div>
                 <div className="food-form-element">
@@ -85,7 +85,7 @@ class EditFood extends React.Component {
                     <input type="text" className="food-input" id="price" value={this.state.price} onChange={this.handleFoodPrice} />
                 </div>
                 <div className="food-form-element">
-                    <label htmlFor="weight">Тегло</label>
+                    <label htmlFor="weight">Грамаж</label>
                     <input type="text" className="food-input" id="weight" value={this.state.weight} onChange={this.handleFoodWeight} />
                 </div>
                 <button className="food-button" onClick={this.editFood}>Редактирай</button>

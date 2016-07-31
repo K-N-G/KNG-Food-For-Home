@@ -54,19 +54,19 @@ class AddFood extends React.Component {
         return(
             <div className="food-form">
                 <div className="food-form-element">
-                    <label htmlFor="name">Име на процедурата</label>
+                    <label htmlFor="name">Ястие</label>
                     <input type="text" className="food-input" id="name" onChange={this.handleFoodName} />
                 </div>
                 <div className="food-form-element">
-                    <label htmlFor="content">Описание</label>
+                    <label htmlFor="content">Съдържание</label>
                     <textarea type="text" className="food-input"  id="content" onChange={this.handleFoodContent} />
                 </div>
                 <div className="food-form-element">
-                    <label htmlFor="price">Описание</label>
+                    <label htmlFor="price">Цена</label>
                     <input type="text" className="food-input" id="price" onChange={this.handleFoodPrice} />
                 </div>
                 <div className="food-form-element">
-                    <label htmlFor="weight">Описание</label>
+                    <label htmlFor="weight">Грамаж</label>
                     <input type="text" className="food-input" id="weight" onChange={this.handleFoodWeight} />
                 </div>
                 <button className="food-button" onClick={this.addFood}>Добави</button>
@@ -81,6 +81,6 @@ AddFood.propTypes = {
 
 AddFood.contextTypes = {
     router: React.PropTypes.object
-}
+};
     
 export default AddFood;

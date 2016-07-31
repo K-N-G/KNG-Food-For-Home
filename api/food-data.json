@@ -1,13 +1,5 @@
 [
     {
-        "id": 1469299620363,
-        "name": "Крем карамел",
-        "content": "neshto",
-        "price": 2.4,
-        "isCooked": true,
-        "weight": 100
-    },
-    {
         "id": 1469350607747,
         "name": "Пилешка супа",
         "content": "neshto",
@@ -45,5 +37,21 @@
         "price": 3.25,
         "isCooked": false,
         "weight": 300
+    },
+    {
+        "id": 1469299620363,
+        "name": "Крем карамел",
+        "content": "neshto",
+        "price": 2.45,
+        "isCooked": false,
+        "weight": 100
+    },
+    {
+        "id": 1469953244395,
+        "name": "Пица",
+        "content": "кашкавал, шунка, гъби",
+        "price": 12.3,
+        "isCooked": false,
+        "weight": 500
     }
 ]

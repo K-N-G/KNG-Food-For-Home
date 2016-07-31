@@ -11,7 +11,6 @@ class User extends React.Component {
         this.isAdmin = false;
         this.currentUser = {};
         this.getUser = this.getUser.bind(this);
-        this.handleUserLogout = this.handleUserLogout.bind(this);
     }
 
     getUser() {
@@ -25,12 +24,6 @@ class User extends React.Component {
         }).fail((xhr, status, err) => {
             console.error(this.props.route.url, status, err.toString());
         });
-    }
-
-    handleUserLogout() {
-        this.context.authService.logoutUser();
-        this.currentUser = {};
-        this.context.router.push('/');
     }
 
     componentDidMount() {
@@ -47,7 +40,6 @@ class User extends React.Component {
         return(
             <div className="food-form">
                 <h3 className="username-greeting">Гладен ли си {this.state.user.username}?</h3>
-                <button className="food-button" onClick={this.handleUserLogout}>Излез</button>
                 {
                     this.isAdmin ?
                         <button className="food-button">Всички потребители</button>

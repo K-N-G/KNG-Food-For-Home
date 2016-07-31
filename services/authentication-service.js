@@ -1,3 +1,4 @@
+'use strict';
 
 import $ from 'jquery';
 
@@ -41,10 +42,10 @@ class AuthenticationService {
     }
 
     isAdmin() {
-        let currentUser = this.getUser();
+        let currentUser = JSON.parse(sessionStorage.currentUser);
         return currentUser !== undefined && currentUser.isAdmin;
     }
-    
+
     isChef() {
         let currentUser = this.getUser();
         return currentUser !== undefined && currentUser.isChef;

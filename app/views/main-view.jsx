@@ -20,7 +20,9 @@ class MainView extends React.Component {
     render() {
         return (
             <div>
-                <Navigation data={this.state.data} isAuthenticated={this.authenticationService.isAuthenticated} />
+                <Navigation data={this.state.data} 
+                            isAuthenticated={this.authenticationService.isAuthenticated}
+                            isAdmin={this.authenticationService.isAdmin}/>
 
                 {/* Routed components go here... */}
                 {this.props.children}

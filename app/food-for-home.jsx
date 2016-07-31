@@ -11,6 +11,7 @@ import EditFood from './views/menus/edit-food.jsx'
 import DeleteFood from './views/menus/delete-food.jsx'
 import RegisterUser from './views/users/register-user.jsx'
 import LoginUser from './views/users/login-user.jsx'
+import LogoutUser from './views/users/logout-user.jsx'
 import User from './views/users/user.jsx'
 
 ReactDOM.render(
@@ -24,6 +25,7 @@ ReactDOM.render(
             <Route path="/users/register" url="/api/users" component={RegisterUser} />
             <Route path="/users/login" url="/api/users/Token" component={LoginUser} />
             <Route path="/users/show" url="/api/users" component={User} />
+            <Route path="/users/logout" component={LogoutUser} />
         </Route>
     </Router>,
     document.getElementById('root')
